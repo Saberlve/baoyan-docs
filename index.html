@@ -131,7 +131,7 @@
             transition: transform 0.2s, box-shadow 0.2s;
         }
 
-        .module-card:hover {
+        a.module-card:hover, .module-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
             border-color: var(--primary-color);
@@ -385,11 +385,11 @@
 
     <section>
         <h2>📚 六大核心模块：每一分都花在刀刃上</h2>
-        <p style="color: #64748b; margin-bottom: 20px;">不是堆砌资料，而是按“考场怎么用”来组织</p>
+        <p style="color: #64748b; margin-bottom: 20px;">不是堆砌资料，而是按“考场怎么用”来组织（点击卡片可查看该模块完整目录）</p>
         
         <div class="modules-grid">
             <!-- Module 1 -->
-            <div class="module-card">
+            <a class="module-card" href="./dir-interview.html" style="text-decoration:none; display:block;">
                 <div class="module-header">
                     <h3>1️⃣ 面试题库</h3>
                     <span class="price">¥19</span>
@@ -403,10 +403,10 @@
                     </ul>
                     <p style="margin-top:10px; font-size:0.85rem; color:#1e40af;">✨ 亮点：含“加分回答框架”</p>
                 </div>
-            </div>
+            </a>
 
             <!-- Module 2 -->
-            <div class="module-card">
+            <a class="module-card" href="./dir-english.html" style="text-decoration:none; display:block;">
                 <div class="module-header">
                     <h3>2️⃣ 英语口试</h3>
                     <span class="price">¥15</span>
@@ -420,10 +420,10 @@
                     </ul>
                     <p style="margin-top:10px; font-size:0.85rem; color:#1e40af;">✨ 亮点：可直接背诵的“高分句型”</p>
                 </div>
-            </div>
+            </a>
 
             <!-- Module 3 -->
-            <div class="module-card">
+            <a class="module-card" href="./dir-mlcode.html" style="text-decoration:none; display:block;">
                 <div class="module-header">
                     <h3>3️⃣ 机器学习机试</h3>
                     <span class="price">¥19</span>
@@ -437,10 +437,10 @@
                     </ul>
                     <p style="margin-top:10px; font-size:0.85rem; color:#1e40af;">✨ 亮点：给你“能手写出来”的代码骨架</p>
                 </div>
-            </div>
+            </a>
 
             <!-- Module 4 -->
-            <div class="module-card">
+            <a class="module-card" href="./dir-algo.html" style="text-decoration:none; display:block;">
                 <div class="module-header">
                     <h3>4️⃣ 机试知识点</h3>
                     <span class="price">¥19</span>
@@ -454,10 +454,10 @@
                     </ul>
                     <p style="margin-top:10px; font-size:0.85rem; color:#1e40af;">✨ 亮点：上机速查模板库</p>
                 </div>
-            </div>
+            </a>
 
             <!-- Module 5 -->
-            <div class="module-card">
+            <a class="module-card" href="./dir-leetcode.html" style="text-decoration:none; display:block;">
                 <div class="module-header">
                     <h3>5️⃣ LeetCode 笔记</h3>
                     <span class="price">¥19</span>
@@ -471,10 +471,10 @@
                     </ul>
                     <p style="margin-top:10px; font-size:0.85rem; color:#1e40af;">✨ 亮点：把题型“归类成套路”</p>
                 </div>
-            </div>
+            </a>
 
             <!-- Module 6 -->
-            <div class="module-card">
+            <a class="module-card" href="./dir-xigua.html" style="text-decoration:none; display:block;">
                 <div class="module-header">
                     <h3>6️⃣ 西瓜书笔记</h3>
                     <span class="price">¥15</span>
@@ -498,40 +498,9 @@
 </section>
 
     
-    <section>
-        <h2>📚 资料总目录（点击查看子页面）</h2>
-        <p style="color: #64748b; margin-bottom: 20px;">每个模块一个子页面：目录更清爽，内容更全（点击卡片进入）。</p>
-        <div class="modules-grid">
-            <a class="module-card" href="./dir-interview.html" style="text-decoration:none;">
-                <div class="module-header"><h3>💬 面试题库</h3><span class="price">目录</span></div>
-                <div class="module-content">数学 / 专业课 / 人工智能：面试常考点一网打尽</div>
-            </a>
-            <a class="module-card" href="./dir-english.html" style="text-decoration:none;">
-                <div class="module-header"><h3>🗣️ 英语口语</h3><span class="price">目录</span></div>
-                <div class="module-content">自我介绍到科研表达：口试高频 15 题型</div>
-            </a>
-            <a class="module-card" href="./dir-mlcode.html" style="text-decoration:none;">
-                <div class="module-header"><h3>💻 ML 机试</h3><span class="price">目录</span></div>
-                <div class="module-content">线回归/SGD/Softmax/BP：手写实现清单</div>
-            </a>
-            <a class="module-card" href="./dir-algo.html" style="text-decoration:none;">
-                <div class="module-header"><h3>⚡ 机试知识点</h3><span class="price">目录</span></div>
-                <div class="module-content">C++ + 算法模板：图论 / DP / 贪心全覆盖</div>
-            </a>
-            <a class="module-card" href="./dir-leetcode.html" style="text-decoration:none;">
-                <div class="module-header"><h3>📝 LeetCode</h3><span class="price">目录</span></div>
-                <div class="module-content">题型归类：数组/双指针/滑窗/子串/链表/树</div>
-            </a>
-            <a class="module-card" href="./dir-xigua.html" style="text-decoration:none;">
-                <div class="module-header"><h3>🍉 西瓜书</h3><span class="price">目录</span></div>
-                <div class="module-content">评估→线性模型→树→SVM→集成→聚类→降维</div>
-            </a>
-            <a class="module-card" href="./dir-experience.html" style="text-decoration:none;">
-                <div class="module-header"><h3>📌 保研面经</h3><span class="price">目录</span></div>
-                <div class="module-content">院校/阶段：夏令营 & 预推免（南大/哈工深/浙软等）</div>
-            </a>
-        </div>
-    </section>
+    
+
+
 
 <section>
         <h2>🎁 超值套餐：更聪明的买法</h2>
@@ -574,7 +543,7 @@
                     <li>机器学习机试 (¥19)</li>
                 </ul>
                 <p style="font-size:0.8rem; color:#64748b;">适合：代码基础薄弱，急需框架</p>
-            </div>
+            </a>
         </div>
     </section>
 
