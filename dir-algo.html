@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>机试知识点（算法 & C++ 速查）目录</title>
+  <style>
+    :root {
+        --primary-color: #2563eb;
+        --secondary-color: #1e40af;
+        --accent-color: #f59e0b;
+        --bg-color: #f8fafc;
+        --text-color: #1e293b;
+        --card-bg: #ffffff;
+        --border-radius: 12px;
+        --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;line-height:1.65;color:var(--text-color);background-color:var(--bg-color);padding:20px}
+    .container{max-width:980px;margin:0 auto;background:var(--card-bg);padding:34px;border-radius:var(--border-radius);box-shadow:var(--shadow)}
+    header{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;flex-wrap:wrap;border-bottom:1px solid #e2e8f0;padding-bottom:16px;margin-bottom:18px}
+    h1{color:var(--secondary-color);font-size:1.8rem;line-height:1.2}
+    .subtitle{color:#64748b;font-size:1rem;margin-top:8px;max-width:62ch}
+    .tag{display:inline-block;background:#eff6ff;color:var(--primary-color);padding:4px 12px;border-radius:999px;font-size:.85rem;font-weight:650;margin:4px 6px 0 0}
+    a{color:inherit}
+    .back{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:700;color:var(--primary-color);padding:8px 12px;border-radius:999px;background:#eff6ff}
+    .back:hover{background:#dbeafe}
+
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin-top:14px}
+    .card{border:1px solid #e2e8f0;border-radius:12px;padding:16px;background:#fff;box-shadow:var(--shadow)}
+    .card h2{font-size:1.05rem;color:var(--secondary-color);margin-bottom:8px;display:flex;align-items:center;gap:8px}
+    .card p{color:#475569;font-size:.95rem}
+
+    .toc{margin-top:14px}
+    details{border:1px solid #e2e8f0;border-radius:12px;background:#f8fafc;padding:12px 14px}
+    details+details{margin-top:10px}
+    summary{cursor:pointer;font-weight:800;color:var(--secondary-color)}
+    ol{padding-left:20px;margin-top:10px;color:#475569}
+    li{margin:6px 0}
+    .hint{margin-top:14px;color:#64748b;font-size:.92rem}
+
+    footer{margin-top:22px;padding-top:14px;border-top:1px solid #e2e8f0;color:#94a3b8;font-size:.82rem}
+    @media (max-width:600px){.container{padding:20px} h1{font-size:1.5rem}}
+</style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div>
+        <h1>机试知识点（算法 & C++ 速查）目录</h1>
+        <p class="subtitle">模板与套路覆盖：基础算法/数据结构/图论/DP/贪心。</p>
+        <div style="margin-top:8px"><span class="tag">⚡ 机试速查</span><span class="tag">¥19 单项</span></div>
+      </div>
+      <a class="back" href="./index.html">← 返回主页</a>
+    </header>
+
+    <section class="toc">
+      <details open>
+<summary>完整目录</summary>
+<ol><li>C++<ol><li>Lambda 表达式</li>
+<li>比较代码（对拍）</li></ol></li>
+<li>算法基础课<ol><li>基础算法<ol><li>快速排序</li>
+<li>归并排序</li>
+<li>整数二分</li>
+<li>浮点数二分</li>
+<li>前缀和（含二维）</li>
+<li>差分（含二维）</li>
+<li>双指针算法</li>
+<li>滑动窗口</li>
+<li>区间合并</li></ol></li>
+<li>数据结构<ol><li>链表</li>
+<li>栈（含单调栈）</li>
+<li>队列（含单调队列）</li>
+<li>KMP</li>
+<li>Trie</li>
+<li>并查集</li>
+<li>堆</li>
+<li>Hash 表</li>
+<li>字符串 Hash</li></ol></li>
+<li>搜索与图论<ol><li>DFS</li>
+<li>BFS</li>
+<li>树和图的存储</li>
+<li>最短路：朴素 Dijkstra</li>
+<li>最短路：堆优化 Dijkstra</li>
+<li>最短路：Bellman-Ford</li>
+<li>最短路：Floyd</li>
+<li>最小生成树：Prim</li>
+<li>最小生成树：Kruskal</li>
+<li>二叉搜索树</li>
+<li>AVL 平衡树</li>
+<li>最近公共祖先 LCA（倍增）</li></ol></li>
+<li>动态规划<ol><li>01 背包</li>
+<li>完全背包</li>
+<li>多重背包（二进制优化）</li>
+<li>分组背包</li>
+<li>线性 DP（LIS/LCS/编辑距离）</li>
+<li>区间 DP（合并果子）</li>
+<li>数位 DP（计数问题）</li>
+<li>树形 DP</li></ol></li>
+<li>贪心算法<ol><li>区间选点</li>
+<li>最大不相交区间数量</li>
+<li>区间分组</li>
+<li>区间覆盖</li>
+<li>排序不等式（排队打水）</li></ol></li></ol></li></ol>
+</details>
+
+      <p class="hint">想直接购买/咨询：回到主页底部“立即行动”区。</p>
+    </section>
+
+    <footer>© Saberlve｜资料目录页（仅展示目录结构）</footer>
+  </div>
+</body>
+</html>
