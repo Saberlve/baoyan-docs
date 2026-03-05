@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>保研复习资料｜内容总览与价目表</title>
+    <style>
+        :root {
+            --primary-color: #2563eb; /* 专业蓝 */
+            --secondary-color: #1e40af; /* 深蓝 */
+            --accent-color: #f59e0b; /* 活力橙 */
+            --bg-color: #f8fafc;
+            --text-color: #1e293b;
+            --card-bg: #ffffff;
+            --border-radius: 12px;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 20px;
+        }
+
+        h1 {
+            color: var(--secondary-color);
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: #64748b;
+            margin-bottom: 20px;
+        }
+
+        .tag {
+            display: inline-block;
+            background: #eff6ff;
+            color: var(--primary-color);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin: 5px;
+        }
+
+        /* Section Titles */
+        h2 {
+            color: var(--secondary-color);
+            margin: 40px 0 20px;
+            font-size: 1.5rem;
+            border-left: 5px solid var(--accent-color);
+            padding-left: 15px;
+        }
+
+        h3 {
+            color: var(--text-color);
+            margin: 20px 0 10px;
+            font-size: 1.2rem;
+        }
+
+        /* Pain Points Table */
+        .pain-points {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: #fff;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .pain-points th, .pain-points td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .pain-points th {
+            background: #f1f5f9;
+            color: var(--secondary-color);
+        }
+
+        .pain-points tr:last-child td {
+            border-bottom: none;
+        }
+
+        .highlight {
+            color: #dc2626;
+            font-weight: bold;
+        }
+
+        /* Modules Grid */
+        .modules-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .module-card {
+            background: #fff;
+            border: 1px solid #e2e8f0;
+            border-radius: var(--border-radius);
+            padding: 20px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .module-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            border-color: var(--primary-color);
+        }
+
+        .module-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .price {
+            color: var(--accent-color);
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .module-content {
+            font-size: 0.95rem;
+            color: #475569;
+        }
+
+        .module-content ul {
+            padding-left: 20px;
+            margin-top: 5px;
+        }
+
+        /* Pricing Packages */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .pricing-card {
+            background: #fff;
+            border: 2px solid #e2e8f0;
+            border-radius: var(--border-radius);
+            padding: 25px;
+            text-align: center;
+            position: relative;
+        }
+
+        .pricing-card.featured {
+            border-color: var(--primary-color);
+            background: #eff6ff;
+            transform: scale(1.05);
+            z-index: 1;
+        }
+
+        .pricing-card.featured::before {
+            content: "🔥 最推荐";
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--accent-color);
+            color: #fff;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .package-price {
+            font-size: 2rem;
+            color: var(--primary-color);
+            font-weight: bold;
+            margin: 15px 0;
+        }
+
+        .package-desc {
+            font-size: 0.9rem;
+            color: #64748b;
+            margin-bottom: 15px;
+        }
+
+        .package-items {
+            text-align: left;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+
+        .package-items li {
+            margin-bottom: 5px;
+            list-style: none;
+        }
+
+        .package-items li::before {
+            content: "✅";
+            margin-right: 5px;
+        }
+
+        /* Bonus Section */
+        .bonus-section {
+            background: #fffbeb;
+            border: 1px dashed #f59e0b;
+            padding: 20px;
+            border-radius: var(--border-radius);
+            margin: 30px 0;
+        }
+
+        .bonus-title {
+            color: #b45309;
+            font-weight: bold;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .bonus-title::before {
+            content: "🎁";
+            margin-right: 8px;
+            font-size: 1.2rem;
+        }
+
+        /* FAQ */
+        .faq-item {
+            margin-bottom: 15px;
+            background: #f8fafc;
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .faq-question {
+            font-weight: bold;
+            color: var(--secondary-color);
+            margin-bottom: 5px;
+        }
+
+        .faq-answer {
+            color: #475569;
+            font-size: 0.95rem;
+        }
+
+        /* Contact / CTA */
+        .contact-section {
+            text-align: center;
+            background: var(--secondary-color);
+            color: #fff;
+            padding: 30px;
+            border-radius: var(--border-radius);
+            margin-top: 40px;
+        }
+
+        .contact-section h2 {
+            color: #fff;
+            border: none;
+            padding: 0;
+            margin: 0 0 15px 0;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--accent-color);
+            color: #fff;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-top: 15px;
+            transition: background 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: #d97706;
+        }
+
+        .contact-info {
+            margin-top: 20px;
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 0.8rem;
+            color: #94a3b8;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 20px;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+            .pricing-card.featured {
+                transform: scale(1);
+            }
+            .pain-points {
+                display: block;
+                overflow-x: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>🎓 保研上岸急救包</h1>
+        <p class="subtitle">高频题库 + 万能模板 + 机试速查｜拒绝无效刷题，把时间花在刀刃上</p>
+        <div>
+            <span class="tag">🚀 交付：Notion 只读/PDF</span>
+            <span class="tag">🔄 持续更新</span>
+            <span class="tag">🎯 核心：能背能查能用</span>
+        </div>
+    </header>
+
+    <section>
+        <h2>🧭 30 秒自测：你现在的痛点是什么？</h2>
+        <p style="color: #64748b; margin-bottom: 15px;">别盲目买资料，先对症下药</p>
+        <table class="pain-points">
+            <thead>
+                <tr>
+                    <th width="30%">你的现状 😰</th>
+                    <th width="35%">💡 推荐方案</th>
+                    <th>🎯 核心解决</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>面试心慌</strong><br>怕被老师追问打穿</td>
+                    <td><span class="highlight">面试题库包</span> 或 <strong>面试 + 英语</strong></td>
+                    <td>覆盖 90% 高频问题，回答有逻辑，心里更有底</td>
+                </tr>
+                <tr>
+                    <td><strong>机试手生</strong><br>代码写不出/没模板</td>
+                    <td><span class="highlight">机试速成包</span></td>
+                    <td>提供可手写的标准代码框架，减少临场失误</td>
+                </tr>
+                <tr>
+                    <td><strong>时间紧迫</strong><br>想一次性拿齐所有</td>
+                    <td><span class="highlight" style="font-size:1.1rem;">🔥 全量资料包</span></td>
+                    <td>按路线复习，无死角覆盖，<strong>省时更省钱</strong></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section>
+        <h2>📚 六大核心模块：每一分都花在刀刃上</h2>
+        <p style="color: #64748b; margin-bottom: 20px;">不是堆砌资料，而是按“考场怎么用”来组织</p>
+        
+        <div class="modules-grid">
+            <!-- Module 1 -->
+            <div class="module-card">
+                <div class="module-header">
+                    <h3>1️⃣ 面试题库</h3>
+                    <span class="price">¥19</span>
+                </div>
+                <div class="module-content">
+                    <p><strong>解决：</strong> 回答没结构、容易被追问卡壳。</p>
+                    <ul>
+                        <li>数学/统计/线代关键结论</li>
+                        <li>计基四大件 (DS/网/OS/DB) 精华</li>
+                        <li>AI 高频 (Transformer/损失函数)</li>
+                    </ul>
+                    <p style="margin-top:10px; font-size:0.85rem; color:#1e40af;">✨ 亮点：含“加分回答框架”</p>
+                </div>
+            </div>
+
+            <!-- Module 2 -->
+            <div class="module-card">
+                <div class="module-header">
+                    <h3>2️⃣ 英语口试</h3>
+                    <span class="price">¥15</span>
+                </div>
+                <div class="module-content">
+                    <p><strong>解决：</strong> 开口慌、只会说 Yes/No。</p>
+                    <ul>
+                        <li>自我介绍 (科研/项目版)</li>
+                        <li>项目难点表达模板</li>
+                        <li>Why School/规划模板</li>
+                    </ul>
+                    <p style="margin-top:10px; font-size:0.85rem; color:#1e40af;">✨ 亮点：可直接背诵的“高分句型”</p>
+                </div>
+            </div>
+
+            <!-- Module 3 -->
+            <div class="module-card">
+                <div class="module-header">
+                    <h3>3️⃣ 机器学习机试</h3>
+                    <span class="price">¥19</span>
+                </div>
+                <div class="module-content">
+                    <p><strong>解决：</strong> 原理懂但代码写不出。</p>
+                    <ul>
+                        <li>线性回归 (GD/SGD)</li>
+                        <li>Softmax (含易错点)</li>
+                        <li>反向传播链式求导拆解</li>
+                    </ul>
+                    <p style="margin-top:10px; font-size:0.85rem; color:#1e40af;">✨ 亮点：给你“能手写出来”的代码骨架</p>
+                </div>
+            </div>
+
+            <!-- Module 4 -->
+            <div class="module-card">
+                <div class="module-header">
+                    <h3>4️⃣ 机试知识点</h3>
+                    <span class="price">¥19</span>
+                </div>
+                <div class="module-content">
+                    <p><strong>解决：</strong> 上机写代码慢、边界不稳。</p>
+                    <ul>
+                        <li>C++ 特性 (Lambda/调试)</li>
+                        <li>高频模板 (排序/二分/双指针)</li>
+                        <li>图论/DP 套路</li>
+                    </ul>
+                    <p style="margin-top:10px; font-size:0.85rem; color:#1e40af;">✨ 亮点：上机速查模板库</p>
+                </div>
+            </div>
+
+            <!-- Module 5 -->
+            <div class="module-card">
+                <div class="module-header">
+                    <h3>5️⃣ LeetCode 笔记</h3>
+                    <span class="price">¥19</span>
+                </div>
+                <div class="module-content">
+                    <p><strong>解决：</strong> 刷题没思路、做完就忘。</p>
+                    <ul>
+                        <li>题型归类 (数组/链表/树/滑窗)</li>
+                        <li>常用代码框架</li>
+                        <li>易错点提醒 (三数之和/接雨水)</li>
+                    </ul>
+                    <p style="margin-top:10px; font-size:0.85rem; color:#1e40af;">✨ 亮点：把题型“归类成套路”</p>
+                </div>
+            </div>
+
+            <!-- Module 6 -->
+            <div class="module-card">
+                <div class="module-header">
+                    <h3>6️⃣ 西瓜书笔记</h3>
+                    <span class="price">¥15</span>
+                </div>
+                <div class="module-content">
+                    <p><strong>解决：</strong> 面试被追问原理，只会背概念。</p>
+                    <ul>
+                        <li>评估指标 (F1/ROC)</li>
+                        <li>经典模型 (SVM/树/聚类)</li>
+                        <li>关键推导</li>
+                    </ul>
+                    <p style="margin-top:10px; font-size:0.85rem; color:#1e40af;">✨ 亮点：能讲清楚“为什么”</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>🎁 超值套餐：更聪明的买法</h2>
+        <p style="color: #64748b; margin-bottom: 20px;">组合购买，立省真金白银</p>
+        
+        <div class="pricing-grid">
+            <!-- Package 1 -->
+            <div class="pricing-card">
+                <h3>🗣️ 面试无忧包</h3>
+                <div class="package-price">¥29</div>
+                <p class="package-desc">专治“开口慌”</p>
+                <ul class="package-items">
+                    <li>面试题库 (¥19)</li>
+                    <li>英语口试 (¥15)</li>
+                </ul>
+                <p style="font-size:0.8rem; color:#64748b;">适合：想重点突破面试环节</p>
+            </div>
+
+            <!-- Package 2 (Featured) -->
+            <div class="pricing-card featured">
+                <h3>👑 全量资料包</h3>
+                <div class="package-price">¥49</div>
+                <p class="package-desc">一次拿齐 6 模块</p>
+                <ul class="package-items">
+                    <li>面试 + 机试 + 理论全覆盖</li>
+                    <li>原价 ¥106+，现仅需 ¥49</li>
+                    <li>按路线复习无死角</li>
+                </ul>
+                <p style="font-size:0.8rem; color:#1e40af; font-weight:bold;">适合：时间紧、追求极致性价比</p>
+            </div>
+
+            <!-- Package 3 -->
+            <div class="pricing-card">
+                <h3>💻 机试速成包</h3>
+                <div class="package-price">¥39</div>
+                <p class="package-desc">专治“上机没模板”</p>
+                <ul class="package-items">
+                    <li>机试知识点 (¥19)</li>
+                    <li>LeetCode 笔记 (¥19)</li>
+                    <li>机器学习机试 (¥19)</li>
+                </ul>
+                <p style="font-size:0.8rem; color:#64748b;">适合：代码基础薄弱，急需框架</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="bonus-section">
+        <div class="bonus-title">购买即送：3 次 1v1 答疑服务</div>
+        <p style="font-size: 0.95rem; color: #92400e;">
+            资料是死的，策略是活的。购买任何套餐，均赠送 3 次深度沟通机会。<br>
+            包含：<strong>📄 文书建议</strong> | <strong>🎓 导师推荐</strong> | <strong>📧 套磁策略</strong> | <strong>🧠 备考出谋划策</strong>
+        </p>
+    </section>
+
+    <section>
+        <h2>❓ 常见问题 (FAQ)</h2>
+        <div class="faq-item">
+            <div class="faq-question">Q：资料怎么交付？</div>
+            <div class="faq-answer">A：Notion 只读分享链接（支持自行复制/打印），可选 PDF 打包发送。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">Q：资料是最新的吗？</div>
+            <div class="faq-answer">A：基于个人2025年经验整理，覆盖高频考点；Notion 支持随时更新，买一次持续受益。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">Q：买了不会用怎么办？</div>
+            <div class="faq-answer">A：文档内附复习路线建议，照顺序看即可；另外赠送的 3 次答疑会帮助你把资料真正用起来。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">Q：支持退款吗？</div>
+            <div class="faq-answer">A：虚拟资料一经发送不支持退款，建议先看清内容介绍后再购买，诚信交易。</div>
+        </div>
+    </section>
+
+    <section class="contact-section">
+        <h2>🚀 立即行动，抢占上岸先机</h2>
+        <p>不想纠结？把你的 <strong>【目标院校/方向/当前短板/可投入时间】</strong> 发我，<br>我按你的情况推荐最省钱且最高效的组合。</p>
+        
+        <a href="#" class="btn">📩 点击联系购买 / 咨询</a>
+        
+        <div class="contact-info">
+            <p>微信：War16000 </p>
+            <p>备注：保研资料 + 方向</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>© Saberlve｜本页为资料介绍与经验分享。具体以实际交付内容为准。</p>
+        <p>💡 提示：保研是一场信息战，别让准备不足成为你的遗憾。</p>
+    </footer>
+</div>
+
+</body>
+</html>
