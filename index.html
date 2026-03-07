@@ -369,6 +369,55 @@
             border: 1px solid #dbeafe;
         }
 
+        /* WeChat QR Modal */
+        .qr-modal {
+            position: fixed;
+            inset: 0;
+            background: rgba(15, 23, 42, .65);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            padding: 16px;
+        }
+
+        .qr-modal.show { display: flex; }
+
+        .qr-modal-card {
+            width: 100%;
+            max-width: 360px;
+            background: #fff;
+            border-radius: 16px;
+            padding: 18px;
+            text-align: center;
+            box-shadow: 0 16px 40px rgba(0,0,0,.2);
+            position: relative;
+        }
+
+        .qr-close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            border: none;
+            background: #f1f5f9;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 16px;
+            line-height: 1;
+        }
+
+        .qr-image {
+            width: 240px;
+            height: 240px;
+            max-width: 100%;
+            border-radius: 10px;
+            border: 1px solid #e2e8f0;
+            margin: 10px auto;
+            display: block;
+        }
+
     </style>
 </head>
 <body>
@@ -614,7 +663,7 @@
         <h2>🚀 立即行动，抢占上岸先机</h2>
         <p>不想纠结？把你的 <strong>【目标院校/方向/当前短板/可投入时间】</strong> 发我，<br>我按你的情况推荐最省钱且最高效的组合。</p>
         
-        <a href="#" class="btn">📩 点击联系购买 / 咨询</a>
+        <button type="button" class="btn" id="contactBtn">📩 点击联系购买 / 咨询</button>
         
         <div class="contact-info">
             <p>微信：War16000 </p>
@@ -628,23 +677,58 @@
     </footer>
 </div>
 
+<div class="qr-modal" id="qrModal" aria-hidden="true">
+    <div class="qr-modal-card" role="dialog" aria-modal="true" aria-label="微信二维码">
+        <button class="qr-close" id="qrClose" aria-label="关闭">×</button>
+        <h3 style="margin:4px 0 8px; color:#1e293b;">添加微信咨询</h3>
+        <img
+            class="qr-image"
+            src="https://api.qrserver.com/v1/create-qr-code/?size=260x260&data=%E5%BE%AE%E4%BF%A1%E5%8F%B7%EF%BC%9AWar16000"
+            alt="微信二维码（微信号：War16000）"
+        />
+        <p style="color:#64748b; font-size:.9rem; margin-top:8px;">微信号：<strong>War16000</strong></p>
+    </div>
+</div>
 
 <script>
   (function(){
     const els = Array.from(document.querySelectorAll('.reveal'));
-    if (!('IntersectionObserver' in window)) {
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver((entries)=>{
+        entries.forEach(e=>{
+          if(e.isIntersecting){
+            e.target.classList.add('in');
+            io.unobserve(e.target);
+          }
+        });
+      }, {threshold: 0.08, rootMargin: '0px 0px -10% 0px'});
+      els.forEach(el=>io.observe(el));
+    } else {
       els.forEach(el => el.classList.add('in'));
-      return;
     }
-    const io = new IntersectionObserver((entries)=>{
-      entries.forEach(e=>{
-        if(e.isIntersecting){
-          e.target.classList.add('in');
-          io.unobserve(e.target);
-        }
-      });
-    }, {threshold: 0.08, rootMargin: '0px 0px -10% 0px'});
-    els.forEach(el=>io.observe(el));
+
+    const contactBtn = document.getElementById('contactBtn');
+    const qrModal = document.getElementById('qrModal');
+    const qrClose = document.getElementById('qrClose');
+
+    const openModal = () => {
+      qrModal.classList.add('show');
+      qrModal.setAttribute('aria-hidden', 'false');
+    };
+
+    const closeModal = () => {
+      qrModal.classList.remove('show');
+      qrModal.setAttribute('aria-hidden', 'true');
+    };
+
+    contactBtn?.addEventListener('click', openModal);
+    qrClose?.addEventListener('click', closeModal);
+    qrModal?.addEventListener('click', (e) => {
+      if (e.target === qrModal) closeModal();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && qrModal?.classList.contains('show')) closeModal();
+    });
   })();
 </script>
 
