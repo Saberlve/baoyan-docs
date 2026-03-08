@@ -41,7 +41,10 @@
 
     footer{margin-top:22px;padding-top:14px;border-top:1px solid #e2e8f0;color:#94a3b8;font-size:.82rem}
     @media (max-width:600px){.container{padding:20px} h1{font-size:1.5rem}}
-</style>
+
+    .preview-lock{margin-top:12px;padding:10px 12px;border:1px dashed #f59e0b;background:#fffbeb;border-radius:10px;color:#92400e;font-size:.9rem}
+    .masked-item{color:#94a3b8;font-style:italic}
+  </style>
 </head>
 <body>
   <div class="container">
@@ -63,10 +66,25 @@
 <li>反向传播神经元</li></ol>
 </details>
 
-      <p class="hint">想直接购买/咨询：回到主页底部“立即行动”区。</p>
+      <p class="hint">当前仅展示部分子目录预览；完整目录与内容请购买后获取。</p>
+          <div class="preview-lock">🔒 为防止内容被搬运，当前页面仅展示部分子目录。</div>
     </section>
 
-    <footer>© Saberlve｜资料目录页（仅展示目录结构）</footer>
+    <footer>© Saberlve｜资料目录页（仅展示部分目录结构）</footer>
   </div>
+<script id="preview-lock">
+(function(){
+  const MAX_ITEMS = 4;
+  document.querySelectorAll('.toc ol').forEach((ol)=>{
+    const items = Array.from(ol.children).filter(el=>el.tagName==='LI');
+    if(items.length<=MAX_ITEMS) return;
+    items.slice(MAX_ITEMS).forEach(el=>el.remove());
+    const li=document.createElement('li');
+    li.className='masked-item';
+    li.textContent='……（更多目录已隐藏）';
+    ol.appendChild(li);
+  });
+})();
+</script>
 </body>
 </html>
