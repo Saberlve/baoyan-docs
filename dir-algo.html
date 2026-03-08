@@ -59,53 +59,14 @@
 
     <section class="toc">
       <details open>
-<summary>完整目录</summary>
-<ol><li>C++<ol><li>Lambda 表达式</li>
-<li>比较代码（对拍）</li></ol></li>
-<li>算法基础课<ol><li>基础算法<ol><li>快速排序</li>
-<li>归并排序</li>
-<li>整数二分</li>
-<li>浮点数二分</li>
-<li>前缀和（含二维）</li>
-<li>差分（含二维）</li>
-<li>双指针算法</li>
-<li>滑动窗口</li>
-<li>区间合并</li></ol></li>
-<li>数据结构<ol><li>链表</li>
-<li>栈（含单调栈）</li>
-<li>队列（含单调队列）</li>
-<li>KMP</li>
-<li>Trie</li>
-<li>并查集</li>
-<li>堆</li>
-<li>Hash 表</li>
-<li>字符串 Hash</li></ol></li>
-<li>搜索与图论<ol><li>DFS</li>
-<li>BFS</li>
-<li>树和图的存储</li>
-<li>最短路：朴素 Dijkstra</li>
-<li>最短路：堆优化 Dijkstra</li>
-<li>最短路：Bellman-Ford</li>
-<li>最短路：Floyd</li>
-<li>最小生成树：Prim</li>
-<li>最小生成树：Kruskal</li>
-<li>二叉搜索树</li>
-<li>AVL 平衡树</li>
-<li>最近公共祖先 LCA（倍增）</li></ol></li>
-<li>动态规划<ol><li>01 背包</li>
-<li>完全背包</li>
-<li>多重背包（二进制优化）</li>
-<li>分组背包</li>
-<li>线性 DP（LIS/LCS/编辑距离）</li>
-<li>区间 DP（合并果子）</li>
-<li>数位 DP（计数问题）</li>
-<li>树形 DP</li></ol></li>
-<li>贪心算法<ol><li>区间选点</li>
-<li>最大不相交区间数量</li>
-<li>区间分组</li>
-<li>区间覆盖</li>
-<li>排序不等式（排队打水）</li></ol></li></ol></li></ol>
-</details>
+        <summary>目录预览（前 3 项）</summary>
+        <ol>
+          <li>C++Lambda 表达式</li>
+          <li>比较代码（对拍）</li>
+          <li>算法基础课基础算法快速排序</li>
+        </ol>
+        <p class="hint" style="margin-top:8px">本页共 <b>3</b> 项，未展示 <b>0</b> 项；购买后解锁完整目录。</p>
+      </details>
 
       <p class="hint">当前仅展示部分子目录预览；完整目录与内容请购买后获取。</p>
           <div class="preview-lock">🔒 为防止内容被搬运，当前页面仅展示部分子目录。</div>
@@ -113,21 +74,5 @@
 
     <footer>© Saberlve｜资料目录页（仅展示部分目录结构）</footer>
   </div>
-<script id="preview-lock">
-(function(){
-  const MAX_ITEMS = 3;
-  document.querySelectorAll('.toc ol').forEach((ol)=>{
-    const items = Array.from(ol.children).filter(el=>el.tagName==='LI');
-    const total = items.length;
-    if(total<=MAX_ITEMS) return;
-    const hidden = total - MAX_ITEMS;
-    items.slice(MAX_ITEMS).forEach(el=>el.remove());
-    const li=document.createElement('li');
-    li.className='masked-item';
-    li.textContent=`……（本层共 ${total} 项，已隐藏 ${hidden} 项；购买后解锁全部）`;
-    ol.appendChild(li);
-  });
-})();
-</script>
 </body>
 </html>

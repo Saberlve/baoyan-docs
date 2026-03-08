@@ -59,46 +59,14 @@
 
     <section class="toc">
       <details open>
-<summary>完整目录</summary>
-<ol><li>模型评估与选择<ol><li>经验误差与过拟合（数据集划分：留出法 / K 折 / 留一法 / 自助法）</li>
-<li>性能度量（Acc/Error、P/R/F1、ROC/AUC、代价敏感）</li>
-<li>比较检验（假设检验）</li>
-<li>偏差-方差分解</li></ol></li>
-<li>线性模型<ol><li>线性回归</li>
-<li>逻辑回归</li>
-<li>线性判别分析（LDA）</li>
-<li>多分类策略（OvO / OvR / MvM、ECOC）</li>
-<li>类别不平衡（阈值移动/重采样）</li></ol></li>
-<li>决策树<ol><li>基本过程</li>
-<li>划分选择（信息增益 / 增益率 / 基尼指数）</li>
-<li>剪枝（预剪枝 / 后剪枝）</li>
-<li>连续属性</li>
-<li>缺失值处理</li>
-<li>多变量决策树</li></ol></li>
-<li>神经网络<ol><li>感知机 / 前馈网络（FFN）</li>
-<li>反向传播（BP）与累计误差</li></ol></li>
-<li>支持向量机（SVM）<ol><li>间隔与支持向量</li>
-<li>拉格朗日乘子与对偶</li>
-<li>SMO</li>
-<li>核函数</li>
-<li>软间隔</li>
-<li>支持向量回归（SVR）</li></ol></li>
-<li>贝叶斯分类器<ol><li>贝叶斯决策论</li>
-<li>极大似然估计</li>
-<li>朴素贝叶斯（含拉普拉斯平滑）</li></ol></li>
-<li>集成学习<ol><li>Boosting（AdaBoost）</li>
-<li>Bagging / 随机森林</li>
-<li>结合策略（平均/投票/Stacking）</li>
-<li>多样性增强</li></ol></li>
-<li>聚类<ol><li>评价指标（外部/内部）</li>
-<li>距离度量</li>
-<li>原型聚类（K-means / LVQ / GMM）</li>
-<li>密度聚类（DBSCAN）</li>
-<li>层次聚类（AGNES）</li></ol></li>
-<li>降维<ol><li>kNN 与维数灾难</li>
-<li>MDS</li>
-<li>PCA</li></ol></li></ol>
-</details>
+        <summary>目录预览（前 3 项）</summary>
+        <ol>
+          <li>模型评估与选择经验误差与过拟合（数据集划分：留出法 / K 折 / 留一法 / 自助法）</li>
+          <li>性能度量（Acc/Error、P/R/F1、ROC/AUC、代价敏感）</li>
+          <li>比较检验（假设检验）</li>
+        </ol>
+        <p class="hint" style="margin-top:8px">本页共 <b>3</b> 项，未展示 <b>0</b> 项；购买后解锁完整目录。</p>
+      </details>
 
       <p class="hint">当前仅展示部分子目录预览；完整目录与内容请购买后获取。</p>
           <div class="preview-lock">🔒 为防止内容被搬运，当前页面仅展示部分子目录。</div>
@@ -106,21 +74,5 @@
 
     <footer>© Saberlve｜资料目录页（仅展示部分目录结构）</footer>
   </div>
-<script id="preview-lock">
-(function(){
-  const MAX_ITEMS = 3;
-  document.querySelectorAll('.toc ol').forEach((ol)=>{
-    const items = Array.from(ol.children).filter(el=>el.tagName==='LI');
-    const total = items.length;
-    if(total<=MAX_ITEMS) return;
-    const hidden = total - MAX_ITEMS;
-    items.slice(MAX_ITEMS).forEach(el=>el.remove());
-    const li=document.createElement('li');
-    li.className='masked-item';
-    li.textContent=`……（本层共 ${total} 项，已隐藏 ${hidden} 项；购买后解锁全部）`;
-    ol.appendChild(li);
-  });
-})();
-</script>
 </body>
 </html>

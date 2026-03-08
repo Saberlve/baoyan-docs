@@ -59,98 +59,14 @@
 
     <section class="toc">
       <details open>
-<summary>完整目录</summary>
-<ol><li>数学类<ol><li>微积分<ol><li>拉格朗日中值定理</li>
-<li>柯西中值定理</li>
-<li>泰勒公式</li>
-<li>黎曼积分</li>
-<li>二重积分 vs 二次积分</li>
-<li>第一型积分（曲线/曲面）</li>
-<li>第二型积分（曲线/曲面）</li>
-<li>偶图判定</li>
-<li>欧拉图判定</li>
-<li>哈密顿图判定</li>
-<li>平面图与欧拉定理</li>
-<li>拉格朗日乘数法</li>
-<li>半群/群</li>
-<li>子群</li>
-<li>循环群</li>
-<li>循环群判定/生成元/子群</li>
-<li>陪集</li>
-<li>拉格朗日定理</li></ol></li>
-<li>概率论<ol><li>大数定律</li>
-<li>中心极限定理</li>
-<li>常见分布</li>
-<li>相关系数与协方差</li></ol></li>
-<li>线性代数<ol><li>矩阵的秩</li>
-<li>线性相关/无关</li>
-<li>特征值/特征向量</li>
-<li>特征值与奇异值</li>
-<li>线性空间/向量空间</li>
-<li>正定矩阵判定</li></ol></li></ol></li>
-<li>专业课<ol><li>数据结构<ol><li>DFS/BFS 对应结构</li>
-<li>拓扑排序</li>
-<li>面向对象：封装/继承/多态</li>
-<li>平衡二叉树</li>
-<li>模式匹配（KMP）</li>
-<li>贪心/DP/分治区别</li>
-<li>指针与引用</li>
-<li>static</li>
-<li>虚函数与抽象类</li>
-<li>强符号/弱符号</li>
-<li>快速排序</li></ol></li>
-<li>计算机网络<ol><li>OSI vs TCP/IP</li>
-<li>TCP vs UDP</li>
-<li>路由选择协议</li>
-<li>流量控制 vs 拥塞控制</li>
-<li>HTTPS</li>
-<li>滑动窗口协议</li>
-<li>CSMA/CD</li>
-<li>NAT</li>
-<li>内网穿透</li></ol></li>
-<li>操作系统<ol><li>中断 vs 异常</li>
-<li>并行 vs 并发</li>
-<li>进程 vs 线程</li>
-<li>进程状态</li>
-<li>调度策略</li>
-<li>死锁与银行家算法</li>
-<li>虚拟内存 vs 共享内存</li>
-<li>页面置换算法</li>
-<li>分页 vs 分段</li>
-<li>段错误</li></ol></li>
-<li>数据库<ol><li>范式</li>
-<li>事务与锁（ACID）</li>
-<li>E-R 图</li>
-<li>关系型 vs 非关系型</li>
-<li>三级模式与两级映射</li>
-<li>B 树 vs B+ 树</li></ol></li>
-<li>计算机组成原理<ol><li>冯诺依曼结构</li>
-<li>堆 vs 栈</li>
-<li>寄存器 vs Cache</li>
-<li>编译阶段</li></ol></li></ol></li>
-<li>人工智能<ol><li>代码<ol><li>tokenizer.encode vs tokenizer()</li>
-<li>view vs reshape</li>
-<li>CrossEntropyLoss 等损失</li>
-<li>过拟合 vs 欠拟合</li>
-<li>梯度下降</li>
-<li>Transformer</li>
-<li>RoPE</li>
-<li>分类 vs 聚类</li>
-<li>线性回归 vs 逻辑回归</li>
-<li>L1 vs L2</li>
-<li>交叉验证</li>
-<li>目标函数 vs 损失函数</li>
-<li>激活函数</li>
-<li>LSTM vs RNN</li>
-<li>LN vs BN</li></ol></li>
-<li>知识图谱</li>
-<li>知识编辑</li>
-<li>交叉熵 vs KL</li>
-<li>常见 ML 算法流程</li>
-<li>ROC vs PR</li>
-<li>动量梯度下降</li>
-<li>BN vs LN（详述）</li></ol></li></ol>
-</details>
+        <summary>目录预览（前 3 项）</summary>
+        <ol>
+          <li>数学类微积分拉格朗日中值定理</li>
+          <li>柯西中值定理</li>
+          <li>泰勒公式</li>
+        </ol>
+        <p class="hint" style="margin-top:8px">本页共 <b>3</b> 项，未展示 <b>0</b> 项；购买后解锁完整目录。</p>
+      </details>
 
       <p class="hint">当前仅展示部分子目录预览；完整目录与内容请购买后获取。</p>
           <div class="preview-lock">🔒 为防止内容被搬运，当前页面仅展示部分子目录。</div>
@@ -158,21 +74,5 @@
 
     <footer>© Saberlve｜资料目录页（仅展示部分目录结构）</footer>
   </div>
-<script id="preview-lock">
-(function(){
-  const MAX_ITEMS = 3;
-  document.querySelectorAll('.toc ol').forEach((ol)=>{
-    const items = Array.from(ol.children).filter(el=>el.tagName==='LI');
-    const total = items.length;
-    if(total<=MAX_ITEMS) return;
-    const hidden = total - MAX_ITEMS;
-    items.slice(MAX_ITEMS).forEach(el=>el.remove());
-    const li=document.createElement('li');
-    li.className='masked-item';
-    li.textContent=`……（本层共 ${total} 项，已隐藏 ${hidden} 项；购买后解锁全部）`;
-    ol.appendChild(li);
-  });
-})();
-</script>
 </body>
 </html>

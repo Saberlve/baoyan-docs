@@ -59,23 +59,14 @@
 
     <section class="toc">
       <details open>
-<summary>完整目录</summary>
-<ol><li>自我介绍（Introduce yourself）</li>
-<li>读研/硕士规划（Plan & Master Degree Plan）</li>
-<li>兴趣爱好（Freetime）</li>
-<li>喜欢的课程</li>
-<li>学校介绍（School）</li>
-<li>个人优缺点</li>
-<li>专业知识：梯度下降</li>
-<li>为什么读硕士不读博士</li>
-<li>家乡/城市相关问题</li>
-<li>为什么选择我们学校</li>
-<li>科研经历介绍</li>
-<li>困难经历</li>
-<li>科研遇到困难如何解决</li>
-<li>未来研究兴趣</li>
-<li>与他人意见不合如何处理</li></ol>
-</details>
+        <summary>目录预览（前 3 项）</summary>
+        <ol>
+          <li>自我介绍（Introduce yourself）</li>
+          <li>读研/硕士规划（Plan & Master Degree Plan）</li>
+          <li>兴趣爱好（Freetime）</li>
+        </ol>
+        <p class="hint" style="margin-top:8px">本页共 <b>3</b> 项，未展示 <b>0</b> 项；购买后解锁完整目录。</p>
+      </details>
 
       <p class="hint">当前仅展示部分子目录预览；完整目录与内容请购买后获取。</p>
           <div class="preview-lock">🔒 为防止内容被搬运，当前页面仅展示部分子目录。</div>
@@ -83,21 +74,5 @@
 
     <footer>© Saberlve｜资料目录页（仅展示部分目录结构）</footer>
   </div>
-<script id="preview-lock">
-(function(){
-  const MAX_ITEMS = 3;
-  document.querySelectorAll('.toc ol').forEach((ol)=>{
-    const items = Array.from(ol.children).filter(el=>el.tagName==='LI');
-    const total = items.length;
-    if(total<=MAX_ITEMS) return;
-    const hidden = total - MAX_ITEMS;
-    items.slice(MAX_ITEMS).forEach(el=>el.remove());
-    const li=document.createElement('li');
-    li.className='masked-item';
-    li.textContent=`……（本层共 ${total} 项，已隐藏 ${hidden} 项；购买后解锁全部）`;
-    ol.appendChild(li);
-  });
-})();
-</script>
 </body>
 </html>
