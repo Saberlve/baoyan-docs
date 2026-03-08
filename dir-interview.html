@@ -160,14 +160,16 @@
   </div>
 <script id="preview-lock">
 (function(){
-  const MAX_ITEMS = 4;
+  const MAX_ITEMS = 3;
   document.querySelectorAll('.toc ol').forEach((ol)=>{
     const items = Array.from(ol.children).filter(el=>el.tagName==='LI');
-    if(items.length<=MAX_ITEMS) return;
+    const total = items.length;
+    if(total<=MAX_ITEMS) return;
+    const hidden = total - MAX_ITEMS;
     items.slice(MAX_ITEMS).forEach(el=>el.remove());
     const li=document.createElement('li');
     li.className='masked-item';
-    li.textContent='……（更多目录已隐藏）';
+    li.textContent=`……（本层共 ${total} 项，已隐藏 ${hidden} 项；购买后解锁全部）`;
     ol.appendChild(li);
   });
 })();
