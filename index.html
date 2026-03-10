@@ -690,6 +690,11 @@
             alt="微信二维码"
         />
         <p style="color:#64748b; font-size:.9rem; margin-top:8px;">扫码添加微信咨询</p>
+        <div style="margin-top:10px;display:flex;gap:8px;justify-content:center;flex-wrap:wrap;">
+            <button id="copyWxBtn" type="button" style="padding:8px 12px;border:1px solid #bfdbfe;background:#eff6ff;color:#1d4ed8;border-radius:8px;cursor:pointer;font-weight:600;">复制微信号</button>
+            <a id="openWxBtn" href="weixin://" style="padding:8px 12px;border:1px solid #86efac;background:#f0fdf4;color:#166534;border-radius:8px;text-decoration:none;font-weight:600;">打开微信</a>
+        </div>
+        <p id="wxHint" style="color:#94a3b8; font-size:.82rem; margin-top:8px;">微信号：War16000</p>
     </div>
 </div>
 
@@ -713,6 +718,10 @@
     const contactBtn = document.getElementById('contactBtn');
     const qrModal = document.getElementById('qrModal');
     const qrClose = document.getElementById('qrClose');
+    const copyWxBtn = document.getElementById('copyWxBtn');
+    const openWxBtn = document.getElementById('openWxBtn');
+    const wxHint = document.getElementById('wxHint');
+    const wxId = 'War16000';
 
     const openModal = () => {
       qrModal.classList.add('show');
@@ -731,6 +740,21 @@
     });
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && qrModal?.classList.contains('show')) closeModal();
+    });
+
+    copyWxBtn?.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(wxId);
+        if (wxHint) wxHint.textContent = `已复制微信号：${wxId}`;
+      } catch {
+        if (wxHint) wxHint.textContent = `复制失败，请手动添加：${wxId}`;
+      }
+    });
+
+    openWxBtn?.addEventListener('click', () => {
+      setTimeout(() => {
+        if (wxHint) wxHint.textContent = `若未自动打开微信，请先复制微信号：${wxId}`;
+      }, 800);
     });
   })();
 </script>
